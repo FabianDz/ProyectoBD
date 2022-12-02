@@ -2,74 +2,67 @@
 package gui;
 
 /**Imports**/
+
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.JOptionPane;
-
 
 /**Clase VentanaMain**/
-public class VentanaMain extends WindowAdapter{
+public class VentanaMain extends WindowAdapter {
+
 	/*Variables*/
 	//Ventana
-	JFrame vM;
-	//Barra de herramientas
-	JMenuBar jmb;
-	//Pestañas
-	JMenu jmAlta, jmBaja, jmConsulta, jmCambio, jmSalir;
-	//Elementos de Pestañas
-	JMenuItem jmiMedicos, jmiPacientes, jmiHospitales, jmiEstudiosLab;
+    private JFrame vM;
+    //Panel
+    private PanelAcciones pA;
+    private PanelCampos pC;
+    //Escritorio
+    private Escritorio jdp;
 
 	/*Metodos*/
-
 	//Constructor
 	public VentanaMain(){
 		//Instanciar Ventana
 		vM = new JFrame("Sistema Medico");
 		vM.setLayout(null);
-        vM.getContentPane().setBackground(new Color(225,225,255));
+        //Panel Campos
+        pC = new PanelCampos();
+        vM.add(pC);
+        //Panel Acciones
+        pA = new PanelAcciones();
+        vM.add(pA);
+        //Desktop
+        jdp = new Escritorio();
+        vM.add(jdp);
+
+        vM.getContentPane().setBackground(new Color(225, 225, 225));
         vM.setResizable(false);
         vM.setSize(600,700);
         vM.addWindowListener(this);
         vM.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
-        //Instanciar Barra de herramientas
-        jmb = new JMenuBar();
-        //Pestaña Alta
-        jmAlta = new JMenu("Alta");
-        jmb.add(jmAlta);
-        	//Item Medicos
-        	jmiMedicos = new JMenuItem("Medicos");
-        		//Botton add
-        		jmAlta.add(jmiMedicos);
-
-        //Insercion de la barra
-        vM.setJMenuBar(jmb);
-
-        /*Fin metodo constructor*/
         vM.setVisible(true);
-        vM.setLocation(null);
-    }
-	
-	//Main
-	public static void main(String[] args) {
-		new VentanaMain();
-	}
+        vM.setLocationRelativeTo(null);
 
-	/*Overrides*/
-    //Cerrar ventana con X
+        //Instanciar Desktop
+
+    }
+
+    //Overrides
     @Override
     public void windowClosing(WindowEvent e){
-        System.out.println("Cerrando ventana");
-        if(JOptionPane.showConfirmDialog(null, "¿Deseas salir del Sistema?","Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE)==JOptionPane.YES_OPTION){
-           vM.dispose();
-           System.exit(0);
+        System.out.println("Cerrando Ventana");
+        if (JOptionPane.showConfirmDialog(null,"¿Desea salir del sistema?", "Confirmación",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)== JOptionPane.YES_OPTION){
+            vM.dispose();
+            System.exit(0);
         }
+    }
+
+    //Main
+    public static void main(String[] args) {
+        new VentanaMain();
     }
 
 }
