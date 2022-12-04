@@ -14,6 +14,47 @@ public class PanelAcciones extends JPanel {
     /*Variables*/
     //Botones de accion
     private JButton jbAlta, jbBaja, jbConsulta, jbCambio, jbSalir;
+    //Sets and Gets
+    public JButton getJbAlta() {
+        return jbAlta;
+    }
+
+    public void setJbAlta(JButton jbAlta) {
+        this.jbAlta = jbAlta;
+    }
+
+    public JButton getJbBaja() {
+        return jbBaja;
+    }
+
+    public void setJbBaja(JButton jbBaja) {
+        this.jbBaja = jbBaja;
+    }
+
+    public JButton getJbConsulta() {
+        return jbConsulta;
+    }
+
+    public void setJbConsulta(JButton jbConsulta) {
+        this.jbConsulta = jbConsulta;
+    }
+
+    public JButton getJbCambio() {
+        return jbCambio;
+    }
+
+    public void setJbCambio(JButton jbCambio) {
+        this.jbCambio = jbCambio;
+    }
+
+    public JButton getJbSalir() {
+        return jbSalir;
+    }
+
+    public void setJbSalir(JButton jbSalir) {
+        this.jbSalir = jbSalir;
+    }
+
     //GridBagConstrains
     private GridBagConstraints gbc = new GridBagConstraints();
 
@@ -63,6 +104,7 @@ public class PanelAcciones extends JPanel {
             gbc.fill = GridBagConstraints.HORIZONTAL;
         add(jbSalir, gbc);
         setVisible(true);
+
     }
 
 

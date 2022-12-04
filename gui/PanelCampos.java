@@ -14,6 +14,14 @@ public class PanelCampos extends JPanel {
     private JComboBox jcbCampo;
     //Items Campo
     private String [] campos = {"Selecciona un campo...","Medicos","Pacientes","Hospitales", "Estudios de Lab"};
+    //Sets y Gets
+    public JComboBox getJcbCampo() {
+        return jcbCampo;
+    }
+
+    public void setJcbCampo(JComboBox jcbCampo) {
+        this.jcbCampo = jcbCampo;
+    }
 
     /*Metodos*/
 
