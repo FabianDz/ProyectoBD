@@ -30,11 +30,11 @@ public class PanelCampos extends JPanel {
         setBounds(20,20,230,100);
         setLayout(new GridBagLayout());
         setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black, 2), "Campos"));
-        ComboBox();
+        comboBox();
     }
 
     //Combo Box
-    private void ComboBox(){
+    private void comboBox(){
         //Instanciar JComboBox
         jcbCampo = new JComboBox(campos);
         add(jcbCampo);
