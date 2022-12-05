@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexion {
-    public static final String URL = "jdbc:mysql://localhost:3306/proyecto";
+    public static final String URL = "jdbc:mysql://localhost:3306/sismed";
     public static final String USER = "root";
     public static final String PASSWD = "root";
 
